@@ -1,8 +1,10 @@
-feature 'User can type a message' do 
+require 'spec_helper'
+
+feature 'User can type a message' do
 	scenario "User enters text" do
 		visit ('/')
 		fill_in 'message', with: "Tess tickle"
 		click_button 'Submit'
 		expect(page).to have_content "Tess tickle"
-	end 
-end 
+	end
+end

@@ -6,16 +6,16 @@
  </head>
 <body>
   <h1> Welcome to the Messenger App </h1>
-  <form action="/board" method='post'>
+  <form action="/board" method='post'
      <br>
-    <input type='text' name='message'>
+    <input type='text' name='message'</input>
      <br>
-     <input type='submit' value='Submit'>
+     <input type='submit' value='Submit'</input>
      <br>
   </form>
        <br>
 <% @messages.reverse.each do | message | %>
-<div> <a href="/messages/<%=message.id%>"><%= message.limit %></a> (<%= message.time.strftime('%a, %d %b %Y, %H:%M:%S') %>) </div>
+<div> <a href="/messages/<%=message.id%>"><%= message.content[0..20] %></a> (<%= message.created_at.strftime('%a, %d %b %Y, %H:%M:%S') %>) </div>
 <br>
 <%end%>
  </body>

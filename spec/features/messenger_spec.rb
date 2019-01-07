@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature "Page displays title" do
   scenario "Page welcomes user" do
     visit('/')
