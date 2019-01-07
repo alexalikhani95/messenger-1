@@ -4,5 +4,5 @@ require './lib/message'
 
    DataMapper.finalize
 
-   DataMapper.auto_migrate!
+   ENV["RACK_ENV"] == 'test' ? DataMapper.auto_migrate! : DataMapper.auto_upgrade!
 # View file
